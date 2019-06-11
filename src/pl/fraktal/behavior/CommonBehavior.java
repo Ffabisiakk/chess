@@ -2,6 +2,7 @@ package pl.fraktal.behavior;
 
 import javafx.scene.paint.Color;
 import pl.fraktal.Board;
+import pl.fraktal.SidePanel;
 
 /**
  * Created by Hollow on 2018-09-18.
@@ -9,7 +10,10 @@ import pl.fraktal.Board;
 public abstract class CommonBehavior implements Behavior{
 
     Board board;
+    SidePanel sidePanel;
     Color initPieceColor, targetPieceColor;
+
+
 
     public boolean isMoveValid(int initColumn, int initRow, int targetColumn, int targetRow, Board board){
 

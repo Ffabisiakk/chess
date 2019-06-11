@@ -1,5 +1,6 @@
 package pl.fraktal;
 
+import javafx.geometry.Side;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import pl.fraktal.piece.*;
@@ -9,10 +10,14 @@ import pl.fraktal.piece.*;
  */
 public class Board extends Pane{
 
+    private SidePanel sidePanel;
+
     private boolean isBlackMove;
     private Tile[][] board;
 
-    public Board(){
+    public Board(SidePanel sidePanel){
+        this.sidePanel = sidePanel;
+
         board = new Tile[8][8];
 
         for (int i = 0; i < 8; i++) {
@@ -86,6 +91,12 @@ public class Board extends Pane{
         checkPromotion(targetTile.getPiece(), targetRow);
 
         isBlackMove = !isBlackMove;
+        if (isBlackMove) {
+            sidePanel.setWhoTurnText("Black Turn");
+        } else {
+            sidePanel.setWhoTurnText("White Turn");
+        }
+
     }
 
     public Tile getTile(int row, int col){
