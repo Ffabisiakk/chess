@@ -18,7 +18,7 @@ public class SidePanel extends VBox {
         whoTurn.setFont(new Font(40));
         Clock clock = new Clock(true);
         Clock clock1 = new Clock(false);
-        clock.clock();
+//        clock.clock();
 //        clock1.clock();
         Text timers = new Text(clock.getText() + "||" + clock1.getText());
         timers.setFont(new Font(30));
